@@ -1,0 +1,6 @@
+I designed a scalable web application architecture using a multi-AZ setup for high availability.
+Traffic first passes through the Internet Gateway and AWS WAF, then reaches the Application Load Balancer. 
+The ALB distributes requests across EC2 instances placed in an Auto Scaling Group inside private subnets.
+A Multi-AZ RDS database handles persistent storage, and ElastiCache (Redis) accelerates read performance.
+Public subnets host load balancing and outbound traffic, while private subnets secure application and database layers.
+CloudWatch collects logs and metrics for monitoring and operational visibility.
