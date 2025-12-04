@@ -1,0 +1,19 @@
+I created one VPC with CIDR 10.0.0.0/16 for enough private IP space.
+
+Added 2 public subnets (10.0.1.0/24, 10.0.2.0/24) and 2 private subnets (10.0.3.0/24, 10.0.4.0/24).
+
+Public subnets are for internet-facing resources. Private subnets are for internal resources.
+
+Attached an Internet Gateway to give public subnets internet access.
+
+Created a NAT Gateway in Public Subnet 1 so private subnets can reach the internet safely.
+
+Updated route tables:
+
+Public → IGW
+
+Private → NAT
+
+Chose /24 ranges because they are simple, clean, and easy to manage.
+
+Added screenshots of VPC, subnets, route tables, IGW, and NAT in my report.
