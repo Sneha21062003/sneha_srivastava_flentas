@@ -1,0 +1,7 @@
+I launched a t3.micro EC2 instance in a public subnet and enabled public IP.
+In the security group, I allowed SSH (my IP) and HTTP (0.0.0.0/0).
+I connected to the instance using SSH and installed Nginx.  
+I replaced the default index.html with my sneha-resume HTML file.
+After restarting Nginx, the site opened using the public IP on port 80.
+For basic hardening, I kept only required ports open, updated the system, and disabled root login.
+I added my setup.sh script to GitHub as part of this task.
