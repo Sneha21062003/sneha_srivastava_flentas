@@ -1,0 +1,7 @@
+1. Brief explanation of your HA architecture and traffic flow
+
+I created an Internet-facing Application Load Balancer placed in two public subnets to ensure the app stays reachable even if one Availability Zone fails.
+The Auto Scaling Group runs EC2 instances inside private subnets for better security and launches them across multiple AZs.
+The ALB receives all incoming traffic and forwards it to the target group, which contains only the EC2 instances managed by the ASG. 
+If any instance fails or load increases, the ASG automatically replaces or adds new ones. This setup keeps the application highly available, scalable, and 
+protected inside private subnets.
